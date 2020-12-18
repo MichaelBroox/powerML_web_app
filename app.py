@@ -16,8 +16,8 @@ def predict():
     '''
     For rendering results on index.html
     '''
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
+    features = [float(x) for x in request.form.values()]
+    final_features = [np.array(features)]
     prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
